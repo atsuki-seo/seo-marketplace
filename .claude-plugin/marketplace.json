@@ -1,0 +1,14 @@
+{
+  "name": "claude-code-customizations",
+  "description": "Claude Code カスタムルールとプラグインのローカルマーケットプレイス",
+  "owner": {
+    "name": "atsuki"
+  },
+  "plugins": [
+    {
+      "name": "rules-manager",
+      "description": "Claude Code のルールと設定を管理するプラグイン",
+      "source": "./plugins/rules-manager"
+    }
+  ]
+}
