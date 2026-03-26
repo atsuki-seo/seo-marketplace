@@ -11,7 +11,11 @@ chmod +x scripts/*.sh
 ./scripts/install.sh
 ```
 
-`install.sh` がシンボリックリンクの作成と `enabledPlugins` の自動登録を行います。
+`install.sh` は以下を行います：
+- ルールファイルを `~/.claude/rules/` にシンボリックリンクでデプロイ
+- ローカルマーケットプレイスとして `settings.json` の `extraKnownMarketplaces` に登録
+- プラグインを `enabledPlugins` と `installed_plugins.json` に登録
+
 完了後、Claude Code を再起動してください。
 
 > **前提**: `jq` が必要です（`sudo apt install jq` / `brew install jq`）
@@ -27,7 +31,6 @@ chmod +x scripts/*.sh
 | プラグイン | 説明 |
 |-----------|------|
 | **rules-manager** | `.claude/rules/` へのルール追加、パススコープ指定、`settings.json` の編集 |
-| **sync-setup** | このリポジトリの初期セットアップ、同期、状態確認 |
 
 ## 日常の使い方
 
@@ -37,7 +40,7 @@ chmod +x scripts/*.sh
 cd ~/claude-code-customizations
 git pull
 ./scripts/status.sh    # 差分を確認
-./scripts/install.sh   # 新しいファイルがあればリンク作成
+./scripts/install.sh   # 新しいプラグインがあれば登録
 ```
 
 既存ファイルの内容変更は `git pull` だけで反映されます。
@@ -58,13 +61,15 @@ git pull
 
 ```
 claude-code-customizations/
+├── .claude-plugin/
+│   └── marketplace.json   # ローカルマーケットプレイス定義
 ├── scripts/
-│   ├── install.sh        # デプロイ（シンボリックリンク + enabledPlugins）
-│   ├── status.sh         # 状態確認
-│   └── uninstall.sh      # アンインストール
-├── rules/                # ユーザーレベルルール (.md)
+│   ├── install.sh         # デプロイ（マーケットプレイス登録 + プラグイン有効化）
+│   ├── add-plugin.sh      # skill-creator で作ったスキルをプラグインに変換
+│   ├── status.sh          # 状態確認
+│   └── uninstall.sh       # アンインストール
+├── rules/                 # ユーザーレベルルール (.md)
 ├── plugins/
-│   ├── rules-manager/    # ルール・設定管理スキル
-│   └── sync-setup/       # セットアップ・同期スキル
+│   └── rules-manager/     # ルール・設定管理スキル
 └── README.md
 ```
