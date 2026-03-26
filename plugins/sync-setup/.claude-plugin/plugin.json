@@ -1,0 +1,8 @@
+{
+  "name": "sync-setup",
+  "description": "Claude Code カスタム設定の初期セットアップ、同期、状態確認を行うプラグイン。",
+  "version": "1.0.0",
+  "author": {
+    "name": "atsuki"
+  }
+}
