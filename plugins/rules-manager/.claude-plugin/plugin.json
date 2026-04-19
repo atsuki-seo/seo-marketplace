@@ -1,8 +1,0 @@
-{
-  "name": "rules-manager",
-  "description": "Claude Code のルールと設定を管理するプラグイン。.claude/rules/ へのルール追加、パススコープ指定、settings.json の編集に対応。",
-  "version": "1.0.0",
-  "author": {
-    "name": "atsuki"
-  }
-}
