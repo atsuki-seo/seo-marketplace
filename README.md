@@ -1,4 +1,4 @@
-# claude-code-customizations
+# seo-marketplace
 
 自分用の Claude Code ローカルマーケットプレイス。
 
