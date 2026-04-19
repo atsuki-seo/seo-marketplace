@@ -9,6 +9,11 @@
       "name": "rules-manager",
       "description": "Claude Code のルールと設定を管理するプラグイン",
       "source": "./plugins/rules-manager"
+    },
+    {
+      "name": "grill-me",
+      "description": "プランや設計について徹底的にインタビューし、共通理解に到達するまで質問し続けるスキル",
+      "source": "./plugins/grill-me"
     }
   ]
 }
